@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySphere</title>
+    <meta
+      name="description"
+      content="StudySphere turns lecture PDFs into revision notes and practice quizzes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="ambient-scene" aria-hidden="true">
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="aurora aurora-three"></div>
+      <div class="aurora aurora-four"></div>
+      <div class="data-river river-one"></div>
+      <div class="data-river river-two"></div>
+      <div class="data-river river-three"></div>
+      <div class="grid-floor"></div>
+      <div class="radial-glow"></div>
+      <span class="bg-particle p1"></span>
+      <span class="bg-particle p2"></span>
+      <span class="bg-particle p3"></span>
+      <span class="bg-particle p4"></span>
+      <span class="bg-particle p5"></span>
+      <span class="bg-particle p6"></span>
+      <span class="bg-particle p7"></span>
+      <span class="bg-particle p8"></span>
+      <span class="bg-particle p9"></span>
+      <span class="bg-particle p10"></span>
+      <span class="bg-particle p11"></span>
+      <span class="bg-particle p12"></span>
+      <span class="bg-particle p13"></span>
+      <span class="bg-particle p14"></span>
+      <span class="bg-particle p15"></span>
+      <span class="bg-particle p16"></span>
+      <span class="bg-particle p17"></span>
+      <span class="bg-particle p18"></span>
+      <span class="bg-particle p19"></span>
+      <span class="bg-particle p20"></span>
+    </div>
+
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-grid"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <span class="brand-name">STUDYSPHERE</span>
+        </div>
+        <div class="topbar-meta">
+          <span class="vit-pill">✦ VIT BHOPAL × GOOGLE FOR DEVELOPERS | PROMPT WARS 2026</span>
+          <span class="brand-tagline">Turn your lecture into your revision.</span>
+        </div>
+      </header>
+
+      <main class="main-panel">
+        <section id="landing-section" class="landing-section">
+          <div class="hero-copy">
+            <span class="eyebrow">AI-Powered Revision Workspace</span>
+            <h1>Turn your lecture into your revision.</h1>
+            <p>
+              Upload a lecture. Get focused notes, a practice quiz, and an AI assistant grounded in your material.
+            </p>
+
+            <div class="flow-pill-row" aria-label="lecture to revision flow">
+              <span>LECTURE PDF</span>
+              <span class="flow-arrow">↓</span>
+              <span>AI</span>
+              <span class="flow-arrow">↓</span>
+              <span>REVISION</span>
+            </div>
+
+            <form id="upload-form" class="upload-panel">
+              <div id="drop-zone" class="upload-card" tabindex="0">
+                <input id="lecture-upload" type="file" accept="application/pdf" hidden />
+                <div class="upload-icon"><span>PDF</span></div>
+                <h2>Drop a lecture PDF here</h2>
+                <p>or click to browse your notes</p>
+                <div class="file-badge hidden" id="file-badge">No file selected</div>
+              </div>
+
+              <div class="subject-row">
+                <label for="subject-input">Course / subject</label>
+                <input id="subject-input" type="text" placeholder="e.g. Biology, Economics, Algorithms" />
+              </div>
+
+              <button id="generate-btn" class="primary-btn" type="submit">
+                Generate Revision
+              </button>
+            </form>
+          </div>
+
+          <div class="hero-visual">
+            <div class="knowledge-scene" aria-label="AI knowledge core panel">
+              <div class="knowledge-hud hud-input">PDF INPUT</div>
+              <div class="knowledge-hud hud-ai">AI CORE</div>
+              <div class="knowledge-hud hud-notes">NOTES</div>
+              <div class="knowledge-hud hud-quiz">QUIZ</div>
+              <div class="knowledge-hud hud-ask">ASK</div>
+
+              <div class="knowledge-connector connector-1"></div>
+              <div class="knowledge-connector connector-2"></div>
+              <div class="knowledge-connector connector-3"></div>
+
+              <div class="knowledge-core-container">
+                <div class="knowledge-connection connection-notes"></div>
+                <div class="knowledge-connection connection-quiz"></div>
+                <div class="knowledge-connection connection-ask"></div>
+
+                <span class="knowledge-tag tag-notes">NOTES</span>
+                <span class="knowledge-tag tag-quiz">QUIZ</span>
+                <span class="knowledge-tag tag-ask">ASK</span>
+
+                <div class="core-ripple"></div>
+                <div class="core-orb"></div>
+                <div class="core-inner"></div>
+
+                <div class="core-particles" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="orbital-ring ring-1">
+                  <div class="data-node"></div>
+                </div>
+
+                <div class="orbital-ring ring-2">
+                  <div class="data-node node-alt"></div>
+                </div>
+
+                <div class="orbital-ring ring-3"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="processing-section" class="processing-panel hidden">
+          <div class="processing-header">
+            <div class="processing-badge">AI processing</div>
+            <div class="processing-meter"><span></span></div>
+          </div>
+          <div class="processing-stream" aria-live="polite">
+            <div class="stream-step active"><span>01</span> Reading lecture</div>
+            <div class="stream-step"><span>02</span> Extracting key concepts</div>
+            <div class="stream-step"><span>03</span> Creating revision notes</div>
+            <div class="stream-step"><span>04</span> Building practice quiz</div>
+          </div>
+        </section>
+
+        <section id="results-section" class="results-panel hidden">
+          <div class="results-header">
+            <div>
+              <span class="eyebrow">Lecture Workspace</span>
+              <h2 id="results-subject">Revision Material</h2>
+            </div>
+            <button id="export-btn" class="secondary-btn" type="button">Export notes</button>
+          </div>
+
+          <div class="results-grid">
+            <div class="glass-card notes-card">
+              <div class="section-title">REVISION NOTES</div>
+              <div id="notes-content" class="notes-content"></div>
+            </div>
+
+            <div class="glass-card quiz-card">
+              <div class="section-title">QUIZ</div>
+              <div id="quiz-content" class="quiz-content"></div>
+            </div>
+          </div>
+
+          <div class="glass-card ask-card">
+            <div class="ask-header-row">
+              <div>
+                <div class="section-title">ASK THIS LECTURE</div>
+                <div class="ask-subtitle">Answers grounded in your uploaded material.</div>
+              </div>
+              <div class="ai-indicator"><span class="ai-dot"></span> Lecture AI</div>
+            </div>
+
+            <div class="ask-suggestions" id="ask-suggestions">
+              <button type="button" class="suggestion-btn">Explain this topic simply</button>
+              <button type="button" class="suggestion-btn">What are the most important concepts?</button>
+              <button type="button" class="suggestion-btn">Give me an example from this lecture</button>
+            </div>
+
+            <div class="chat-window" id="chat-window" aria-live="polite"></div>
+
+            <form id="ask-form" class="ask-form">
+              <input id="ask-input" type="text" placeholder="Ask a question about this lecture..." />
+              <button type="submit" class="primary-btn small-btn">Ask</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
