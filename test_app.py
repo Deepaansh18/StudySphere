@@ -2,7 +2,7 @@ import io
 import os
 import unittest
 
-from app import app
+from main import app
 
 
 def make_pdf_bytes(text: str) -> bytes:

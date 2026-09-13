@@ -1,5 +1,5 @@
 import io
-from app import app, extract_pdf_text
+from main import app, extract_pdf_text
 
 lecture_text = '''
 Photosynthesis is the process by which green plants convert carbon dioxide and water into glucose and oxygen using light energy captured by chlorophyll.
