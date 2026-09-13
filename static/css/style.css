@@ -48,10 +48,10 @@ body {
 .aurora {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.22;
+  filter: blur(38px);
+  opacity: 0.14;
   mix-blend-mode: screen;
-  animation: auroraDrift 26s ease-in-out infinite alternate;
+  animation: auroraDrift 14s ease-in-out infinite alternate;
 }
 
 .aurora-one {
@@ -94,31 +94,31 @@ body {
   height: 1px;
   left: -10%;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 243, 255, 0.15) 18%, rgba(150, 180, 255, 0.4) 52%, rgba(147, 51, 234, 0.18) 100%);
-  box-shadow: 0 0 18px rgba(0, 243, 255, 0.16);
-  opacity: 0.32;
-  filter: blur(1px);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 243, 255, 0.18) 18%, rgba(150, 180, 255, 0.28) 52%, rgba(147, 51, 234, 0.12) 100%);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.12);
+  opacity: 0.28;
+  filter: blur(0.5px);
 }
 
 .river-one {
   width: 48%;
   top: 28%;
   transform: rotate(12deg);
-  animation: driftLine 22s ease-in-out infinite alternate;
+  animation: driftLine 16s ease-in-out infinite alternate;
 }
 
 .river-two {
   width: 52%;
   top: 52%;
   transform: rotate(-18deg);
-  animation: driftLine 26s ease-in-out infinite alternate-reverse;
+  animation: driftLine 18s ease-in-out infinite alternate-reverse;
 }
 
 .river-three {
   width: 46%;
   top: 70%;
   transform: rotate(8deg);
-  animation: driftLine 24s ease-in-out infinite alternate;
+  animation: driftLine 17s ease-in-out infinite alternate;
 }
 
 .grid-floor {
@@ -128,10 +128,9 @@ body {
     linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
   background-size: 36px 36px;
-  transform: perspective(1300px) rotateX(72deg) scale(1.2)
-    translate3d(0, 0, 0);
-  opacity: 0.28;
-  animation: gridShift 20s ease-in-out infinite alternate;
+  transform: perspective(1300px) rotateX(72deg) scale(1.2) translate3d(0, 0, 0);
+  opacity: 0.26;
+  animation: gridShift 14s ease-in-out infinite alternate;
 }
 
 .radial-glow {
@@ -142,9 +141,9 @@ body {
   top: 52%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 243, 255, 0.08), rgba(76, 29, 149, 0.05) 38%, transparent 68%);
-  filter: blur(30px);
-  opacity: 0.9;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.08), rgba(76, 29, 149, 0.04) 38%, transparent 68%);
+  filter: blur(18px);
+  opacity: 0.7;
 }
 
 .bg-particle {
@@ -154,9 +153,9 @@ body {
   height: 4px;
   border-radius: 50%;
   background: rgba(125, 211, 252, 0.85);
-  box-shadow: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 18px rgba(147, 51, 234, 0.25);
-  opacity: 0.5;
-  animation: particleFloat 18s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  opacity: 0.48;
+  animation: particleFloat 12s ease-in-out infinite alternate;
 }
 
 .p1 { top: 12%; left: 10%; animation-delay: 0s; }
@@ -191,27 +190,27 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(circle at 18% 12%, rgba(76, 29, 149, 0.56), transparent 18%),
-    radial-gradient(circle at 74% 28%, rgba(6, 182, 212, 0.12), transparent 20%),
-    radial-gradient(circle at 50% 72%, rgba(76, 29, 149, 0.18), transparent 28%);
-  filter: blur(18px);
-  opacity: 0.9;
-  animation: ambientDrift 26s ease-in-out infinite alternate;
+    radial-gradient(circle at 18% 12%, rgba(76, 29, 149, 0.44), transparent 18%),
+    radial-gradient(circle at 74% 28%, rgba(6, 182, 212, 0.1), transparent 20%),
+    radial-gradient(circle at 50% 72%, rgba(76, 29, 149, 0.12), transparent 28%);
+  filter: blur(14px);
+  opacity: 0.8;
+  animation: ambientDrift 18s ease-in-out infinite alternate;
 }
 
 body::after {
   background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(circle at center, rgba(0,0,0,0.8), transparent 92%);
-  opacity: 0.7;
+  opacity: 0.52;
 }
 
 .app-shell {
   position: relative;
   z-index: 1;
-  max-width: 1400px;
+  width: min(100%, 1400px);
   margin: 0 auto;
   padding: clamp(16px, 2.2vh, 28px) clamp(18px, 2.8vw, 36px) 32px;
 }
@@ -219,56 +218,56 @@ body::after {
 @keyframes auroraDrift {
   0% {
     transform: translate3d(0, 0, 0) scale(0.96);
-    opacity: 0.15;
+    opacity: 0.12;
   }
   50% {
-    transform: translate3d(2.5rem, -2.2rem, 0) scale(1.04);
-    opacity: 0.22;
+    transform: translate3d(2rem, -1.8rem, 0) scale(1.03);
+    opacity: 0.17;
   }
   100% {
-    transform: translate3d(-2.2rem, 1.9rem, 0) scale(1.08);
-    opacity: 0.26;
+    transform: translate3d(-1.8rem, 1.4rem, 0) scale(1.05);
+    opacity: 0.2;
   }
 }
 
 @keyframes driftLine {
   0% {
     transform: translate3d(-2%, 0, 0) scaleX(0.96);
-    opacity: 0.18;
+    opacity: 0.14;
   }
   50% {
-    transform: translate3d(5%, -10px, 0) scaleX(1.04);
-    opacity: 0.38;
+    transform: translate3d(4%, -8px, 0) scaleX(1.02);
+    opacity: 0.24;
   }
   100% {
-    transform: translate3d(-4%, 12px, 0) scaleX(1);
-    opacity: 0.24;
+    transform: translate3d(-3%, 10px, 0) scaleX(1);
+    opacity: 0.18;
   }
 }
 
 @keyframes gridShift {
   0% {
-    transform: perspective(1300px) rotateX(72deg) translate3d(-1.4%, -2%, 0) scale(1.12);
-    opacity: 0.22;
+    transform: perspective(1300px) rotateX(72deg) translate3d(-1%, -1.2%, 0) scale(1.1);
+    opacity: 0.2;
   }
   100% {
-    transform: perspective(1300px) rotateX(72deg) translate3d(1.4%, 2%, 0) scale(1.2);
-    opacity: 0.36;
+    transform: perspective(1300px) rotateX(72deg) translate3d(1%, 1.4%, 0) scale(1.16);
+    opacity: 0.28;
   }
 }
 
 @keyframes particleFloat {
   0% {
     transform: translate3d(0, 0, 0) scale(0.8);
-    opacity: 0.2;
+    opacity: 0.22;
   }
   50% {
-    transform: translate3d(14px, -16px, 0) scale(1.2);
-    opacity: 0.8;
+    transform: translate3d(10px, -14px, 0) scale(1.1);
+    opacity: 0.7;
   }
   100% {
-    transform: translate3d(-10px, 18px, 0) scale(0.9);
-    opacity: 0.48;
+    transform: translate3d(-8px, 12px, 0) scale(0.86);
+    opacity: 0.42;
   }
 }
 
@@ -279,7 +278,7 @@ body::after {
   }
   100% {
     background-position: 100% 80%;
-    transform: scale(1.06);
+    transform: scale(1.04);
   }
 }
 
@@ -293,8 +292,8 @@ input {
   width: 32rem;
   height: 32rem;
   border-radius: 50%;
-  filter: blur(36px);
-  opacity: 0.16;
+  filter: blur(22px);
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
 }
@@ -316,8 +315,8 @@ input {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(circle at center, rgba(0,0,0,0.82), transparent 90%);
   z-index: 0;
@@ -542,7 +541,7 @@ input {
   opacity: 0;
   transform: translateY(24px) scale(0.9) rotateX(10deg);
   will-change: transform;
-  animation: coreEntry 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards, hoverCore 9s ease-in-out 1.2s infinite;
+  animation: coreEntry 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards, hoverCore 12s ease-in-out 1.2s infinite;
   transition: transform 0.45s ease;
 }
 
@@ -637,7 +636,7 @@ input {
   border: 2px solid rgba(0, 243, 255, 0.8);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  animation: shockwave 3.2s infinite ease-out;
+  animation: shockwave 9s infinite ease-out;
   will-change: transform, opacity;
 }
 
@@ -647,9 +646,9 @@ input {
   height: 132px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.96), rgba(0,243,255,0.95) 24%, rgba(138,43,226,0.58) 62%, rgba(8,12,22,0.5) 100%);
-  box-shadow: inset 0 0 12px rgba(255,255,255,0.9), 0 0 22px rgba(0,243,255,0.46), 0 0 32px rgba(138,43,226,0.18);
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.7), 0 0 20px rgba(0,243,255,0.4), 0 0 26px rgba(138,43,226,0.14);
   transform: translateZ(40px);
-  animation: innerPulse 4.8s ease-in-out infinite;
+  animation: innerPulse 10s ease-in-out infinite;
   will-change: transform, box-shadow;
 }
 
@@ -683,9 +682,9 @@ input {
   height: 136px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(0, 243, 255, 0.9) 12%, rgba(138, 43, 226, 0.82) 58%, rgba(138, 43, 226, 0.12) 82%, transparent 100%);
-  box-shadow: 0 0 24px rgba(0, 243, 255, 0.72), 0 0 64px rgba(138, 43, 226, 0.28);
+  box-shadow: 0 0 22px rgba(0, 243, 255, 0.6), 0 0 42px rgba(138, 43, 226, 0.22);
   transform: translateZ(30px) scale(1.04);
-  animation: breatheCore 4.6s ease-in-out infinite;
+  animation: breatheCore 10s ease-in-out infinite;
   will-change: transform, box-shadow;
 }
 
@@ -701,10 +700,10 @@ input {
 .orbital-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(0, 243, 255, 0.7);
-  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 8px rgba(138, 43, 226, 0.12);
+  border: 1px solid rgba(0, 243, 255, 0.65);
+  box-shadow: 0 0 8px rgba(0, 243, 255, 0.14), inset 0 0 8px rgba(138, 43, 226, 0.08);
   background: rgba(0, 243, 255, 0.02);
-  opacity: 0.9;
+  opacity: 0.85;
   will-change: transform, opacity;
 }
 
@@ -712,22 +711,22 @@ input {
   width: 240px;
   height: 240px;
   transform: rotateX(80deg) translateZ(10px);
-  animation: rotateX 12s linear infinite;
+  animation: rotateX 13s linear infinite;
 }
 
 .ring-2 {
   width: 300px;
   height: 300px;
-  border-color: rgba(138, 43, 226, 0.76);
+  border-color: rgba(138, 43, 226, 0.72);
   transform: rotateY(70deg) translateZ(12px);
-  animation: rotateY 16s linear infinite reverse;
+  animation: rotateY 15s linear infinite reverse;
 }
 
 .ring-3 {
   width: 360px;
   height: 360px;
   transform: rotateZ(45deg) rotateX(64deg);
-  animation: rotateZ 18s linear infinite;
+  animation: rotateZ 17s linear infinite;
 }
 
 .data-node {
@@ -1430,26 +1429,26 @@ input {
 @keyframes innerPulse {
   0%, 100% {
     transform: translateZ(40px) scale(0.96);
-    box-shadow: inset 0 0 18px rgba(255,255,255,0.9), 0 0 28px rgba(0,243,255,0.52), 0 0 70px rgba(138,43,226,0.28);
+    box-shadow: inset 0 0 16px rgba(255,255,255,0.82), 0 0 20px rgba(0,243,255,0.44), 0 0 44px rgba(138,43,226,0.2);
   }
   50% {
-    transform: translateZ(46px) scale(1.08);
-    box-shadow: inset 0 0 18px rgba(255,255,255,1), 0 0 36px rgba(0,243,255,0.7), 0 0 90px rgba(138,43,226,0.35);
+    transform: translateZ(44px) scale(1.06);
+    box-shadow: inset 0 0 18px rgba(255,255,255,1), 0 0 28px rgba(0,243,255,0.56), 0 0 58px rgba(138,43,226,0.24);
   }
 }
 
 @keyframes particleFloat {
   0% {
     transform: translate3d(0, 0, 0) scale(0.75);
-    opacity: 0.25;
+    opacity: 0.22;
   }
   50% {
-    transform: translate3d(12px, -18px, 0) scale(1);
-    opacity: 0.9;
+    transform: translate3d(10px, -12px, 0) scale(1);
+    opacity: 0.72;
   }
   100% {
-    transform: translate3d(-10px, 14px, 0) scale(0.78);
-    opacity: 0.5;
+    transform: translate3d(-8px, 12px, 0) scale(0.8);
+    opacity: 0.42;
   }
 }
 
@@ -1481,12 +1480,12 @@ input {
 
 @keyframes hoverCore {
   0%, 100% { transform: translateY(0px) rotateX(8deg) rotateY(0deg); }
-  50% { transform: translateY(-12px) rotateX(14deg) rotateY(12deg); }
+  50% { transform: translateY(-8px) rotateX(12deg) rotateY(8deg); }
 }
 
 @keyframes breatheCore {
-  0%, 100% { transform: translateZ(30px) scale(1); box-shadow: 0 0 40px rgba(0, 243, 255, 0.9), 0 0 110px rgba(138, 43, 226, 0.42); }
-  50% { transform: translateZ(38px) scale(1.08); box-shadow: 0 0 52px rgba(0, 243, 255, 0.96), 0 0 140px rgba(138, 43, 226, 0.6); }
+  0%, 100% { transform: translateZ(30px) scale(1); box-shadow: 0 0 26px rgba(0, 243, 255, 0.7), 0 0 52px rgba(138, 43, 226, 0.18); }
+  50% { transform: translateZ(36px) scale(1.06); box-shadow: 0 0 30px rgba(0, 243, 255, 0.82), 0 0 64px rgba(138, 43, 226, 0.2); }
 }
 
 @keyframes floatFile {
